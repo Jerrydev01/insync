@@ -1,14 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { v4 as uuidv4 } from "uuid";
+import uuid from "react-native-uuid";
 
 const initialState = {
   list: [
     {
-      id: uuidv4(),
+      id: uuid.v4(),
       title: "insync Interview",
     },
     {
-      id: uuidv4(),
+      id: uuid.v4(),
       title: "insync Assessment",
     },
   ],
@@ -21,7 +21,7 @@ export const todoSlice = createSlice({
     addToList: (state, action) => {
       state.list = [
         ...state.list,
-        { id: uuidv4(), title: action.payload.task },
+        { id: uuid.v4(), title: action.payload.task },
       ];
     },
     deleteFromIndividualList: (state, action) => {
