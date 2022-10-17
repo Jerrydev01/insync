@@ -67,7 +67,7 @@ const TodoApp = () => {
   };
 
   return (
-    <View>
+    <View style={styles.container}>
       <Text style={styles.header}>Todo List</Text>
       <>
         <TextInput
@@ -112,6 +112,13 @@ const TodoApp = () => {
 };
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#374151",
+    paddingHorizontal: 25,
+    // alignItems: "center",
+    // justifyContent: "center",
+  },
   header: {
     display: "flex",
     justifyContent: "center",
