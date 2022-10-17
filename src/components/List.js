@@ -11,7 +11,6 @@ import { useSelector, useDispatch } from "react-redux";
 
 import TodoItem from "./TodoItem";
 
-import axios from "axios";
 
 const List = () => {
   const data = useSelector((state) => state.todo.list);

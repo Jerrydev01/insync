@@ -6,7 +6,6 @@ import {
   TouchableOpacity,
   Text,
   TextInput,
-   ActivityIndicator,
   Alert,
 } from "react-native";
 import List from "./List";
@@ -14,7 +13,7 @@ import { addToList } from "../redux/todoSlice";
 import { useDispatch, useSelector } from "react-redux";
 import ListApi from "./ListApi";
 import axios from "axios";
-import uuid from "react-native-uuid";
+
 
 const TodoApp = () => {
   const data = useSelector((state) => state.todo.list);
@@ -62,8 +61,8 @@ const TodoApp = () => {
     );
     setTask("");
   };
- 
-  return toggle ? (
+
+  return (
     <View>
       <Text style={styles.header}>Todo List</Text>
       <>
@@ -104,10 +103,6 @@ const TodoApp = () => {
           />
         </>
       )}
-    </View>
-  ) : (
-    <View style={{ flex: 1, justifyContent: "center" }}>
-      <ActivityIndicator size="large" color="#00ff00" />
     </View>
   );
 };
