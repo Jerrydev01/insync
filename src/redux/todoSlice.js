@@ -6,10 +6,12 @@ const initialState = {
     {
       id: uuid.v4(),
       title: "insync Interview",
+      isComplete: true,
     },
     {
       id: uuid.v4(),
       title: "insync Assessment",
+      isComplete: false,
     },
   ],
 };
@@ -19,18 +21,21 @@ export const todoSlice = createSlice({
   initialState,
   reducers: {
     addToList: (state, action) => {
-      state.list = [
-        ...state.list,
-        { id: uuid.v4(), title: action.payload.task },
-      ];
+      state.list.unshift({ id: uuid.v4(), title: action.payload.task });
     },
     deleteFromIndividualList: (state, action) => {
       state.list = [...state.list.filter((list) => list.id !== action.payload)];
     },
     editList: (state, action) => {
-      state.list = list.map((item) =>
-        item.id === action.payload.id ? action.payload : item
-      );
+      // state.list.map((item) => {
+      //   if (item.id === action.payload) {
+      //     const updateItem = { ...item, isComplete: !item.isComplete };
+      //     // return updateItem;
+      //     state.list = updateItem;
+      //   }
+      //   return state;
+      // });
+      state.list.concat({ id: uuid.v4(), title: action.payload.task });
     },
   },
 });
