@@ -12,15 +12,12 @@ import List from "./List";
 import { addToList } from "../redux/todoSlice";
 import { useDispatch, useSelector } from "react-redux";
 import ListApi from "./ListApi";
-import axios from "axios";
-
 
 const TodoApp = () => {
   const data = useSelector((state) => state.todo.list);
   const [task, setTask] = useState("");
   const [toggle, setToggle] = useState([]);
   const [isShow, setIsShow] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
 
   const dispatch = useDispatch();
 
@@ -33,14 +30,21 @@ const TodoApp = () => {
   };
 
   // https://jsonplaceholder.typicode.com/todos
-  const handleApi = () =>
-    axios.get(`https://jsonplaceholder.typicode.com/todos`).then((response) => {
-      setToggle(response.data);
-      setIsLoading(false);
-    });
+
   useEffect(() => {
-    handleApi();
-    setIsLoading(true);
+    const url = `https://jsonplaceholder.typicode.com/todos`;
+
+    const fetchData = async () => {
+      try {
+        const response = await fetch(url);
+        const json = await response.json();
+        setToggle(json);
+      } catch (error) {
+        console.log("error", error);
+      }
+    };
+
+    fetchData();
   }, []);
 
   function handleDelete(id) {
