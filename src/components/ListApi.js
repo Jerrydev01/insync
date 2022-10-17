@@ -47,11 +47,6 @@ const ListApi = ({ toggle, setToggle, handleDelete }) => {
 };
 
 const styles = StyleSheet.create({
-  listText: {
-    fontSize: 24,
-    color: "gray",
-    marginBottom: 10,
-  },
   todo: {
     display: "flex",
     flexDirection: "row",
@@ -67,11 +62,6 @@ const styles = StyleSheet.create({
   todoText: {
     color: "#FFFFFF",
     fontSize: 17,
-  },
-  textInput: {
-    padding: 10,
-    borderRadius: 5,
-    backgroundColor: "#a2a8a3",
   },
 });
 

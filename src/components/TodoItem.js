@@ -18,9 +18,9 @@ const TodoItem = (props) => {
   const [text, setText] = useState("");
   const dispatch = useDispatch();
 
-  const handleEdit = () => {
-    dispatch(editList({ text: text }));
-  };
+  // const handleEdit = () => {
+  //   dispatch(editList({ text: text }));
+  // };
   return (
     <>
       <View style={styles.todo}>
@@ -62,11 +62,7 @@ const TodoItem = (props) => {
 };
 
 const styles = StyleSheet.create({
-  listText: {
-    fontSize: 24,
-    color: "gray",
-    marginBottom: 10,
-  },
+ 
   todo: {
     display: "flex",
     flexDirection: "row",

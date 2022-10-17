@@ -60,27 +60,6 @@ const styles = StyleSheet.create({
     color: "gray",
     marginBottom: 10,
   },
-  todo: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    paddingRight: 10,
-    alignItems: "center",
-    backgroundColor: "#101827",
-    borderRadius: 5,
-    paddingHorizontal: 10,
-    paddingVertical: 5,
-    marginBottom: 10,
-  },
-  todoText: {
-    color: "#FFFFFF",
-    fontSize: 17,
-  },
-  textInput: {
-    padding: 10,
-    borderRadius: 5,
-    backgroundColor: "#a2a8a3",
-  },
 });
 
 export default List;
